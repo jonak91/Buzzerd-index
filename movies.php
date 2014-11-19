@@ -10,10 +10,6 @@
 			</div><! --/ MAIN CONTENT AREA -->
 	 		
 	 		
-	 		<! -- SIDEBAR -->
-	 		<div class="col-lg-4">
-		 		<p>Sidebar (if any) goes here/</p>
-	 		</div><!-- /SIDEBAR -->
 	 	</div><! --/row -->
 	 </div><! --/container -->
 
