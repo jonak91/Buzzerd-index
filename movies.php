@@ -5,7 +5,7 @@
 	 	
 	 		<! -- MAIN CONTENAT AREA -->
 	 		<div class="col-lg-8">
-	 			<p>The main body of the page goes here</p>
+	 			<h1>All movies</h1>
 		 		
 			</div><! --/ MAIN CONTENT AREA -->
 	 		
