@@ -7,13 +7,14 @@
 	 		<div class="col-lg-8">
 	 			<h1>All studios</h1>
 		 		
+		 		<?php
+		 		$studios = get_studios();
+		 		print_r(get_studios());
+		 		foreach ($studios as $studio) { ?>
+		 		<h2>Title: <?php $movie['name'] ?></h2>
+		 		<?php } ?>
 			</div><! --/ MAIN CONTENT AREA -->
 	 		
-	 		
-	 		<! -- SIDEBAR -->
-	 		<div class="col-lg-4">
-		 		<p>Sidebar (if any) goes here/</p>
-	 		</div><!-- /SIDEBAR -->
 	 	</div><! --/row -->
 	 </div><! --/container -->
 

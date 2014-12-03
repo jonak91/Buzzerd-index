@@ -50,6 +50,7 @@
             <li><a href="movies.php">Movies</a></li>
             <li><a href="actors.php">Actors</a></li>
             <li><a href="studios.php">Studios</a></li>
+            <li><a href="genres.php">Genres</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>

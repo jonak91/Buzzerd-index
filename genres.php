@@ -5,13 +5,16 @@
 	 	
 	 		<! -- MAIN CONTENAT AREA -->
 	 		<div class="col-lg-8">
-	 			<h1>Coming soon</h1>
+	 			<h1>All studios</h1>
 		 		
+		 		<?php
+		 		$movies = get_gneres();
+		 		print_r(get_genres());
+		 		foreach ($genres as $genre) { ?>
+		 			<h2>Title: <?php $genre['name'] ?></h2>
+		 		<?php } ?>
 		 		<h2>Name:</h2>
-		 		<h2>DoB:</h2>
-		 		<h2>Bio:</h2>
-		 		<h2>Last updated:</h2>
-		 		<h2>List of movies in:</h2>
+		 		<h2>Number of movies:</h2>
 			</div><! --/ MAIN CONTENT AREA -->
 	 		
 	 	</div><! --/row -->
