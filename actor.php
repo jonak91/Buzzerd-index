@@ -7,7 +7,6 @@
 	 		<?php 
 	 		$aID = $_GET['aID'];
 	 		$actor = get_actor($aID);
-	 		print_r($actor);
 	 		?>
 	 	
 	 		<! -- MAIN CONTENAT AREA -->

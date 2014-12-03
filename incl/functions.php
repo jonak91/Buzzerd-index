@@ -45,6 +45,61 @@ function get_actor($aID){
 	return $db->get_row($query);
 }
 
+function get_studio($sID){
+	$db= $GLOBALS['db'];
+	$query= "SELECT * FROM studio WHERE sID = '$sID'"; //updated
+	return $db->get_row($query);
+}
+
+function get_genre($gID){
+	$db= $GLOBALS['db'];
+	$query= "SELECT * FROM genre WHERE gID = '$gID'"; //updated
+	return $db->get_row($query);
+}
+
+function get_moviesfromstudio($id){  //works
+	$db= $GLOBALS['db'];
+	$results= $db->query("SELECT * FROM movies JOIN studio ON movies.studioID = studio.sID WHERE studio.sID = '$id'");
+	return $db->resToArray($results);
+}
+
+function get_moviesfromgenre($id){ //works
+	$db= $GLOBALS['db'];
+	$results= $db->query("SELECT * FROM movies JOIN genre ON movies.genreID = genre.gID WHERE genre.gID = '$id'");
+	return $db->resToArray($results);
+}
+
+function get_actorsfrommovie($id){  
+	$db= $GLOBALS['db'];
+	$results= $db->query("SELECT * FROM actors JOIN movie ON actors.movieID = movie.mID WHERE movie.mID = '$id'");
+	return $db->resToArray($results);
+}
+
+function get_moviesfromactor($id){  
+	$db= $GLOBALS['db'];
+	$results= $db->query("SELECT * FROM movies JOIN actor ON movies.actorID = actor.aID WHERE actor.aID = '$id'");
+	return $db->resToArray($results);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 function add_movie($info){
 	$db= $GLOBALS['db'];
 	extract($info);

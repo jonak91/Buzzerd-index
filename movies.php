@@ -9,10 +9,16 @@
 	 			<h1>All movies</h1>
 	 			<?php
 		 		$movies = get_movies();
-		 		foreach ($movies as $movie) { ?>
+		 		$count = 0;
+		 		foreach ($movies as $movie) {
+		 		$count++;
+		 		?>
 		 		<h2>Title: <a href="movie.php?mID=<?php echo $movie['mID']; ?>"><?php echo $movie['title']; ?></a></h2>
 		 		<h2>Year: <?php echo $movie['year_released']; ?></h2>
-		 		<?php } ?>
+		 		<?php } 
+		 		
+		 		echo $count; //put in html
+		 		?>
 		 		
 </div><! --/ MAIN CONTENT AREA -->
 	 		

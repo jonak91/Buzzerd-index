@@ -4,7 +4,6 @@
  <div class="container mtb">
 	 	<div class="row">
 	 		
-	 		
 	 		<?php 
 	 		$mID = $_GET['mID'];
 	 		$movie = get_movie($mID);

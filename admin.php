@@ -1,3 +1,4 @@
+<?php require_once( 'incl/functions.php' ); ?>
 <?php require_once( 'incl/header.php' ); ?>
 
  <div class="container mtb">
@@ -5,15 +6,9 @@
 	 	
 	 		<! -- MAIN CONTENAT AREA -->
 	 		<div class="col-lg-8">
-	 			<p>The main body of the page goes here</p>
-		 		
+		 			<h2>Some stuff goes here</h2>
+		 			
 			</div><! --/ MAIN CONTENT AREA -->
-	 		
-	 		
-	 		<! -- SIDEBAR -->
-	 		<div class="col-lg-4">
-		 		<p>Sidebar (if any) goes here/</p>
-	 		</div><!-- /SIDEBAR -->
 	 	</div><! --/row -->
 	 </div><! --/container -->
 

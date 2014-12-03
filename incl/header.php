@@ -42,7 +42,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.php">MOVIE_DB</a>
+          <a class="navbar-brand" href="index.php">Movie Collections and Knowledge</a>
         </div>
         <div class="navbar-collapse collapse navbar-right">
           <ul class="nav navbar-nav">
@@ -51,6 +51,7 @@
             <li><a href="actors.php">Actors</a></li>
             <li><a href="studios.php">Studios</a></li>
             <li><a href="genres.php">Genres</a></li>
+            <li><a href="admin.php">Admin</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
