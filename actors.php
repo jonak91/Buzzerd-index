@@ -10,10 +10,8 @@
 		 		
 		 		<?php
 		 		$actors = get_actors();
-		 		print_r(get_actors());
-		 		
 		 		foreach ($actors as $actor) { ?>
-		 		<h2>Title: <?php echo $actor['first_name']; ?></h2>
+		 		<h2>Name: <a href="actor.php?aID=<?php echo $actor['aID']; ?>"><?php echo $actor['first_name'].' '.$actor['last_name']; ?></a></h2>
 		 		<h2>Year: <?php echo $actor['dob']; ?></h2>
 		 		<?php } ?>
 			</div><! --/ MAIN CONTENT AREA -->

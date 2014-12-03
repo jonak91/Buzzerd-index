@@ -11,7 +11,7 @@ $db= new Database($d, $u, $p, $host);
 
 function get_movies(){
 	$db = $GLOBALS['db'];
-	$results = $db->query("SELECT * FROM movies");
+	$results = $db->query("SELECT * FROM movies"); //updated
 	return $db->resToArray($results);
 }
 
@@ -21,51 +21,29 @@ function get_actors(){
 	return $db->resToArray($results);
 }
 
-function get_genre(){
-	$db= $GLOBALS['db'];
-	$query= ("SELECT movie.title, genre.name FROM movies, genre, movie_genres WHERE movies.mID = movie_genres.movieID AND genre.ID = movie_genres.genre.ID;");
-	return $db->resToArray($query);
-}
-
-function get_movie(){
-	$db= $GLOBALS['db'];
-	$query= ("SELECT movies.mID, movies.title, movies.year_released, movie_actors.movieID, movie_actors.actorID, actors.aID
-            FROM movies, movie_actors, actors
-            WHERE movie_actors.actorID = 2
-            AND actors.aID = movie_actors.actorID
-            AND movies.mID = movie_actors.movieID
-            ORDER BY movies.title;");
-	return $db->resToArray($query);
-}
-
 function get_studios(){
 	$db= $GLOBALS['db'];
-	$query= ("SELECT * FROM studio");
-	return $db->resToArray($query);
+	$results = $db->query("SELECT * FROM studio"); //updated
+	return $db->resToArray($results);
 }
 
-function get_actor(){
+function get_genres(){
 	$db= $GLOBALS['db'];
-	$query= ("SELECT actors.aID, actors.first_name, actors.last_name, movies.title,
-			FROM actors, movies,
-			join movie_actors
-			where actors.aID=movie_actors.actorID
-			and
-			movie_actors.movieID=movies.mID");
-	return $db->resToArray($query);
-}
-	
-function get_actor2(){
-	$db= $GLOBALS['db'];
-	$query= ("SELECT actors.actorID, actors.first_name, actors.last_name, actors.DoB, actors.bio
-            FROM movies.actors
-            WHERE movie_actors.actorID = 2
-            AND actors.aID = movie_actors.actorID
-            AND movies.mID = movie_actors.movieID
-            ORDER BY movies.title;");
-	return $db->resToArray($query);
+	$results = $db->query("SELECT * FROM genre"); //updated
+	return $db->resToArray($results);
 }
 
+function get_movie($mID){
+	$db= $GLOBALS['db'];
+	$query= "SELECT * FROM movies WHERE mID = '$mID'"; //updated
+	return $db->get_row($query);
+}
+
+function get_actor($aID){
+	$db= $GLOBALS['db'];
+	$query= "SELECT * FROM actors WHERE aID = '$aID'"; //updated
+	return $db->get_row($query);
+}
 
 function add_movie($info){
 	$db= $GLOBALS['db'];

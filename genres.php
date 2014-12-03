@@ -1,3 +1,4 @@
+<?php require_once( 'incl/functions.php' ); ?>
 <?php require_once( 'incl/header.php' ); ?>
 
  <div class="container mtb">
@@ -5,16 +6,13 @@
 	 	
 	 		<! -- MAIN CONTENAT AREA -->
 	 		<div class="col-lg-8">
-	 			<h1>All studios</h1>
+	 			<h1>All Genres</h1>
 		 		
 		 		<?php
-		 		$movies = get_gneres();
-		 		print_r(get_genres());
+		 		$genres = get_genres();
 		 		foreach ($genres as $genre) { ?>
-		 			<h2>Title: <?php $genre['name'] ?></h2>
+		 		<h2>Name: <a href="genre.php?gID=<?php echo $genre['gID']; ?>"><?php echo $genre['name']; ?></a></h2>
 		 		<?php } ?>
-		 		<h2>Name:</h2>
-		 		<h2>Number of movies:</h2>
 			</div><! --/ MAIN CONTENT AREA -->
 	 		
 	 	</div><! --/row -->

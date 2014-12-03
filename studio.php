@@ -1,3 +1,4 @@
+<?php require_once( 'incl/functions.php' ); ?>
 <?php require_once( 'incl/header.php' ); ?>
 
  <div class="container mtb">

@@ -1,3 +1,4 @@
+<?php require_once( 'incl/functions.php' ); ?>
 <?php require_once( 'incl/header.php' ); ?>
 
  <div class="container mtb">
@@ -9,9 +10,9 @@
 		 		
 		 		<?php
 		 		$studios = get_studios();
-		 		print_r(get_studios());
 		 		foreach ($studios as $studio) { ?>
-		 		<h2>Title: <?php $movie['name'] ?></h2>
+		 		<h2>Name: <a href="studio.php?sID=<?php echo $studio['sID']; ?>"><?php echo $studio['name']; ?></a></h2>
+		 		<h2>Location: <?php echo $studio['city'].' '. $studio['state'].' '. $studio['zip']; ?></h2>
 		 		<?php } ?>
 			</div><! --/ MAIN CONTENT AREA -->
 	 		
