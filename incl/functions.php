@@ -63,26 +63,23 @@ function get_moviesfromstudio($id){  //works
 	return $db->resToArray($results);
 }
 
+function get_moviesfromactor($id){ //works
+	$db= $GLOBALS['db'];
+	$results= $db->query("SELECT * FROM movies JOIN movie_actors ON movies.mID = movie_actors.movieID JOIN actors ON movie_actors.actorID = actors.aID WHERE actors.aID = '$id'");
+	return $db->resToArray($results);
+}
 
+function get_moviesfromgenre($id){ //works 
+	$db= $GLOBALS['db'];
+	$results= $db->query("SELECT * FROM movies JOIN movie_genre ON movies.mID = movie_genre.movieID JOIN genres ON movie_genre.genreID = genres.gID WHERE genres.gID = '$id'");
+	return $db->resToArray($results);
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+function get_actorsfrommovies($id){  //works
+	$db= $GLOBALS['db'];
+	$results= $db->query("SELECT * FROM actors JOIN movie_actors ON actors.aID = movie_actors.actorID JOIN movies ON movie_actors.movieID = movies.mID WHERE movies.mID = '$id'");
+	return $db->resToArray($results);
+}
 
 function add_movie($info){
 	$db= $GLOBALS['db'];
@@ -97,7 +94,7 @@ function add_movie($info){
 function add_actor($info){
 	$db= $GLOBALS['db'];
 	extract($info);
-	$submitted= $db->query("INSERT INTO actors VALUES('', '$first_name', '$last_name', '$dob', '$bio', '$won_oscar', CURRENT_TIMESTAMP)");
+	$submitted= $db->query("INSERT INTO actors VALUES('', '$first_name', '$last_name', '$bio', '$dob', '$won_oscar', CURRENT_TIMESTAMP)");
 	
 	if($submitted){ 
 		print "<h3>$first_name $last_name submitted!</h3>"; 
@@ -107,20 +104,20 @@ function add_actor($info){
 function add_genre($info){
 	$db= $GLOBALS['db'];
 	extract($info);
-	$submitted= $db->query("INSERT INTO movie_genre VALUES('', '$mgID', '$movieID', '$genreID', CURRENT_TIMESTAMP)");
+	$submitted= $db->query("INSERT INTO genre VALUES('', '$name', CURRENT_TIMESTAMP)");
 	
 	if($submitted){ 
-		print "<h3>$title submitted!</h3>"; 
+		print "<h3>$name submitted!</h3>"; 
 	}
 }
 
 function add_studio($info){
 	$db= $GLOBALS['db'];
 	extract($info);
-	$submitted= $db->query("INSERT INTO studio VALUES('', '$sID', '$name', '$city', '$state', '$zip', CURRENT_TIMESTAMP)");
+	$submitted= $db->query("INSERT INTO studio VALUES('', '$name', '$city', '$state', '$zip', CURRENT_TIMESTAMP)");
 	
 	if($submitted){ 
-		print "<h3>$title submitted!</h3>"; 
+		print "<h3>$name submitted!</h3>"; 
 	}
 }
 

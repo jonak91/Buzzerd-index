@@ -21,10 +21,10 @@
 									<label for="last_name">Last Name:</label> <input type="text" name="last_name" placeholder="Ex: Ocean's Eleven" />
 								</div>
 								<div>
-									<label for="dob">Date of Birth:</label> <input type="text" name="dob" placeholder="Ex: 1991-11-13" />
+									<label for="bio">Biography:</label> <textarea name="bio" rows="5" cols="100"></textarea>
 								</div>
 								<div>
-									<label for="bio">Biography:</label> <textarea name="bio" rows="5" cols="100"></textarea>
+									<label for="dob">Date of Birth:</label> <input type="text" name="dob" placeholder="Ex: 1991-11-13" />
 								</div>
 								<div>
 								<label for="won_oscar"> Has this actor/actress won an oscar?</label>
