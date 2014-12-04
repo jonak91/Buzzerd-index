@@ -7,18 +7,24 @@
 	 		<! -- MAIN CONTENAT AREA -->
 	 		<div class="col-lg-8">
 	 			<h1>All movies</h1>
-	 			<?php
+	 			<table style="width:100%">
+
+					<td><h2>Title:</h2></td> <td><h2>Year:</h2></td>
+					<?php
 		 		$movies = get_movies();
-		 		$count = 0;
 		 		foreach ($movies as $movie) {
-		 		$count++;
 		 		?>
-		 		<h2>Title: <a href="movie.php?mID=<?php echo $movie['mID']; ?>"><?php echo $movie['title']; ?></a></h2>
-		 		<h2>Year: <?php echo $movie['year_released']; ?></h2>
-		 		<?php } 
-		 		
-		 		echo $count; //put in html
-		 		?>
+		 		<tr>
+		 		<td><h2><a href="movie.php?mID=<?php echo $movie['mID']; ?>"><?php echo $movie['title']; ?></a></h2></td>
+		 		</tr>
+		 		<tr><td></td>
+		 		<td><h2><?php echo $movie['year_released']; ?></h2></td>
+		 		</tr>
+		 		<?php } ?>
+
+
+
+					</table>
 		 		
 </div><! --/ MAIN CONTENT AREA -->
 	 		

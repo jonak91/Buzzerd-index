@@ -18,6 +18,11 @@
 		 		<h2>Bio:<?php echo $actor['bio']; ?></h2>
 		 		<h2>Last updated:<?php echo $actor['timestamp']; ?></h2>
 		 		<h2>List of movies in:</h2>
+		 		<?php $moviesfromactor = get_moviesfromactor($aID);
+		 		foreach ($moviesfromactor as $moviefromactor) {?>
+		 		<h2><a href="movie.php?mID=<?php echo $moviefromactor['mID']; ?>"><?php echo $moviefromactor['title']; ?></a></h2>
+		 		<?php } ?>
+		 		
 			</div><! --/ MAIN CONTENT AREA -->
 	 		
 	 	</div><! --/row -->

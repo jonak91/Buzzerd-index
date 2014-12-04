@@ -63,6 +63,12 @@ function get_moviesfromstudio($id){  //works
 	return $db->resToArray($results);
 }
 
+function get_genresfrommovies($id){  
+	$db= $GLOBALS['db'];
+	$results= $db->query("SELECT * FROM genre JOIN movie_genres ON genre.gID = movie_genres.genreID JOIN movies ON movie_genres.movieID = movies.mID WHERE movies.mID = '$id'");
+	return $db->resToArray($results);
+}
+
 function get_moviesfromactor($id){ //works
 	$db= $GLOBALS['db'];
 	$results= $db->query("SELECT * FROM movies JOIN movie_actors ON movies.mID = movie_actors.movieID JOIN actors ON movie_actors.actorID = actors.aID WHERE actors.aID = '$id'");
@@ -71,7 +77,7 @@ function get_moviesfromactor($id){ //works
 
 function get_moviesfromgenre($id){ //works 
 	$db= $GLOBALS['db'];
-	$results= $db->query("SELECT * FROM movies JOIN movie_genre ON movies.mID = movie_genre.movieID JOIN genres ON movie_genre.genreID = genres.gID WHERE genres.gID = '$id'");
+	$results= $db->query("SELECT * FROM movies JOIN movie_genres ON movies.mID = movie_genres.movieID JOIN genre ON movie_genres.genreID = genre.gID WHERE genre.gID = '$id'");
 	return $db->resToArray($results);
 }
 
@@ -81,7 +87,7 @@ function get_actorsfrommovies($id){  //works
 	return $db->resToArray($results);
 }
 
-function add_movie($info){
+function add_movie($info){		//works
 	$db= $GLOBALS['db'];
 	extract($info);
 	$submitted= $db->query("INSERT INTO movies VALUES('', '$title', '$year_released', '$synopsis', '$was_novel', '$studioID', CURRENT_TIMESTAMP)");
@@ -91,7 +97,7 @@ function add_movie($info){
 	}
 }
 
-function add_actor($info){
+function add_actor($info){		//works
 	$db= $GLOBALS['db'];
 	extract($info);
 	$submitted= $db->query("INSERT INTO actors VALUES('', '$first_name', '$last_name', '$bio', '$dob', '$won_oscar', CURRENT_TIMESTAMP)");
@@ -101,7 +107,7 @@ function add_actor($info){
 	}
 }
 
-function add_genre($info){
+function add_genre($info){		//works
 	$db= $GLOBALS['db'];
 	extract($info);
 	$submitted= $db->query("INSERT INTO genre VALUES('', '$name', CURRENT_TIMESTAMP)");
@@ -111,7 +117,7 @@ function add_genre($info){
 	}
 }
 
-function add_studio($info){
+function add_studio($info){		//works
 	$db= $GLOBALS['db'];
 	extract($info);
 	$submitted= $db->query("INSERT INTO studio VALUES('', '$name', '$city', '$state', '$zip', CURRENT_TIMESTAMP)");
@@ -121,11 +127,26 @@ function add_studio($info){
 	}
 }
 
-function print_array( $a ) {
-?>
-  <pre>
-  <?php var_dump( $a ); ?>
-  </pre>
-<?php
+function assign_atm($info){		//works
+	$db= $GLOBALS['db'];
+	extract($info);
+	$submitted= $db->query("INSERT INTO movie_actors VALUES('', '$movie', '$actor', CURRENT_TIMESTAMP)");
+	
+	if($submitted){ 
+		print "<h3>assigned</h3>"; 
+	}
 }
+
+function assign_gtm($info){		//works
+	$db= $GLOBALS['db'];
+	extract($info);
+	$submitted= $db->query("INSERT INTO movie_genres VALUES('', '$movie', '$genre', CURRENT_TIMESTAMP)");
+	
+	if($submitted){ 
+		print "<h3>assigned</h3>"; 
+	}
+}
+
+
 ?>
+>

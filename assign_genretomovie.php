@@ -6,29 +6,32 @@
 	 		
 	 		<?php
 			  if(isset($_POST['submit'])){
-					add_studio($_POST);
+					assign_gtm($_POST);
 				}
 		?>
 	 	
 	 		<! -- MAIN CONTENAT AREA -->
 	 		<div class="col-lg-8">
 		 			<h2>Some stuff goes here</h2>
-						<h2>Add Studio</h2>
-						<form method="post" name="add_studio">
-								<div>
-									<label for="name">Studio Name:</label> <input type="text" name="name" placeholder="Ex: Warner Bros" />
-								</div>
-								<div>
-									<label for="city">City:</label> <input type="text" name="city" placeholder="Ex: Chicago" />
-								</div>
-								<div>
-									<label for="state">State:</label> <input type="text" name="state" placeholder="Ex: Michigan" />
-								</div>
-								<div>
-									<label for="zip">Table Description:</label> <input type="text" name="zip" placeholder="Ex: 18512" />
-								</div>
-								<div>
-							<input type="submit" name="submit" value="Add Studio" />
+						<h2>Assign Genre to Movie</h2>
+						<form method="post" name="assign_gtm">
+							 <label for="movie"> Select movie in this genre:</label>
+									<select name="movie">
+										<?php 
+										$movies = get_movies();
+										foreach($movies as $movie){ ?>
+										<option value="<?php echo $movie['mID']; ?>"><?php echo $movie['title']; ?></option>
+										<?php } ?>
+									</select>
+									<label for="genre"> Select genre name:</label>
+									<select name="genre">
+										<?php 
+										$genres = get_genres();
+										foreach($genres as $genre){ ?>
+										<option value="<?php echo $genre['gID']; ?>"><?php echo $genre['name']; ?></option>
+										<?php } ?>
+									</select>
+							<input type="submit" name="submit" value="Assign" />
 						</form>
 						
 						

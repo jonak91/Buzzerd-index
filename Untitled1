@@ -1,7 +1,6 @@
-search bar
-recently added on home page
-count
-table style on pages
-actors movie in
-movie actors in
-movie with certain genre
+search bar //no
+recently added on home page //how to print depending on type
+table style on pages //almost done - see index
+Hide timestamp?
+year off actor list //<h2>Year: <?php echo $actor['dob']; ?></h2>
+alphabetical list

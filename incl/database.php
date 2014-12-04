@@ -74,6 +74,14 @@ class Database{
         function get_mysql_timestamp(){
                 return date('Y-m-d H:i:s', time());
         }
+        
+        function print_array( $a ) {
+        ?>
+          <pre>
+          <?php var_dump( $a ); ?>
+          </pre>
+        <?php
+        }
 
 
         function clean_array($info){

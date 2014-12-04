@@ -8,12 +8,25 @@
 	 		<div class="col-lg-8">
 	 			<h1>All studios</h1>
 		 		
-		 		<?php
+		 		<table style="width:100%">
+
+					<td><h2>Name:</h2></td> <td><h2>Location:</h2></td>
+					<?php
 		 		$studios = get_studios();
-		 		foreach ($studios as $studio) { ?>
-		 		<h2>Name: <a href="studio.php?sID=<?php echo $studio['sID']; ?>"><?php echo $studio['name']; ?></a></h2>
-		 		<h2>Location: <?php echo $studio['city'].' '. $studio['state'].' '. $studio['zip']; ?></h2>
+		 		foreach ($studios as $studio) {
+		 		?>
+		 		<tr>
+		 		<td><h2><a href="studio.php?sID=<?php echo $studio['sID']; ?>"><?php echo $studio['name']; ?></a></h2></td>
+		 		</tr>
+		 		<tr><td></td>
+		 		<td><h2><?php echo $studio['city'].' '. $studio['state'].' '. $studio['zip']; ?></td>
+		 		</tr>
 		 		<?php } ?>
+
+
+
+					</table>
+		 		
 			</div><! --/ MAIN CONTENT AREA -->
 	 		
 	 	</div><! --/row -->

@@ -14,9 +14,10 @@
 	 			<h1>working on it</h1>
 	 			
 	 			<h2>Name: <?php echo $genre['name']; ?></h2>
+	 			<h2>Movies in the genre:</h2>
 		 		<?php $moviesfromgenre = get_moviesfromgenre($gID);
 		 		foreach ($moviesfromgenre as $moviefromgenre) {?>
-		 		<h2>Starring: (actors)<a href="movie.php?mID=<?php echo $moviefromgenre['mID']; ?>"><?php echo $moviefromgenre['title']; ?></h2>
+		 		<h2><a href="movie.php?mID=<?php echo $moviefromgenre['mID']; ?>"><?php echo $moviefromgenre['title']; ?></a></h2>
 		 		<?php } ?>
 			</div><! --/ MAIN CONTENT AREA -->
 	 		

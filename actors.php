@@ -7,12 +7,20 @@
 	 		<! -- MAIN CONTENAT AREA -->
 	 		<div class="col-lg-8">
 	 			<h1>All actors</h1>
-		 		
+	 			
+	 			
+		 		<h2>Actors:</h2>
 		 		<?php
 		 		$actors = get_actors();
-		 		foreach ($actors as $actor) { ?>
-		 		<h2>Name: <a href="actor.php?aID=<?php echo $actor['aID']; ?>"><?php echo $actor['first_name'].' '.$actor['last_name']; ?></a></h2>
-		 		<h2>Year: <?php echo $actor['dob']; ?></h2>
+		 		foreach ($actors as $actor) { 
+		 		$count = 0;
+		 		
+		 		$moviesfromactor = get_moviesfromactor($actor['aID']);
+		 		foreach ($moviesfromactor as $moviefromactor) {
+					$count++;
+		 		} 
+		 		?>
+		 		<h2><a href="actor.php?aID=<?php echo $actor['aID']; ?>"><?php echo $actor['first_name'].' '.$actor['last_name'].' ('.$count.')'; ?></a></h2>
 		 		<?php } ?>
 			</div><! --/ MAIN CONTENT AREA -->
 	 		

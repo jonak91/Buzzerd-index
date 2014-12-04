@@ -7,11 +7,12 @@
 	 		<! -- MAIN CONTENAT AREA -->
 	 		<div class="col-lg-8">
 	 			<h1>All Genres</h1>
-		 		
+	 			
+		 		<h2>Name:</h2>
 		 		<?php
 		 		$genres = get_genres();
 		 		foreach ($genres as $genre) { ?>
-		 		<h2>Name: <a href="genre.php?gID=<?php echo $genre['gID']; ?>"><?php echo $genre['name']; ?></a></h2>
+		 		<h2><a href="genre.php?gID=<?php echo $genre['gID']; ?>"><?php echo $genre['name']; ?></a></h2>
 		 		<?php } ?>
 			</div><! --/ MAIN CONTENT AREA -->
 	 		
