@@ -51,6 +51,7 @@
             <li><a href="genres.php">Genres</a></li>
             <li><a href="admin.php">Admin</a></li>
           </ul>
+          
         </div><!--/.nav-collapse -->
       </div>
     </div>

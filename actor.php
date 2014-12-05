@@ -1,6 +1,25 @@
 <?php require_once( 'incl/functions.php' ); ?>
 <?php require_once( 'incl/header.php' ); ?>
 
+<div id="blue">
+	    <div class="container">
+			<div class="row">
+			    <?php
+			    if(isset($_POST['submit'])){
+			    $title=$_POST['title'];
+				header( "Location: /results.php?result=$title");
+				}
+		        ?>
+				<form method="post" name="search">
+				<div>
+				<label for="name">Search Movies:</label><input type="text" name="title" placeholder="Ex: Home Alone 2" />
+				</div>
+				<input type="submit" name="submit" value="Search" />
+				</form>
+			</div><!-- /row -->
+	    </div> <!-- /container -->
+	</div>
+	
  <div class="container mtb">
 	 	<div class="row">
 	 		
@@ -12,7 +31,7 @@
 	 		<! -- MAIN CONTENAT AREA -->
 	 		<div class="col-lg-8">
 
-		 		<h2>Name:<?php echo $actor['first_name'].' '.$actor['last_name']; ?></h2>
+		 		<h2>Name: <?php echo $actor['first_name'].' '.$actor['last_name']; ?></h2>
 		 		<h2>DoB:<?php echo $actor['dob']; ?></h2>
 		 		<h2>Bio:<?php echo $actor['bio']; ?></h2>
 		 		<h2>List of movies in:</h2>
