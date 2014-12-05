@@ -8,17 +8,15 @@
 	 		<div class="col-lg-8">
 	 			<h1>All movies</h1>
 	 			<table style="width:100%">
-
+					<tr>
 					<td><h2>Title:</h2></td> <td><h2>Year:</h2></td>
+					</tr>
 					<?php
 		 		$movies = get_movies();
 		 		foreach ($movies as $movie) {
 		 		?>
 		 		<tr>
-		 		<td><h2><a href="movie.php?mID=<?php echo $movie['mID']; ?>"><?php echo $movie['title']; ?></a></h2></td>
-		 		</tr>
-		 		<tr><td></td>
-		 		<td><h2><?php echo $movie['year_released']; ?></h2></td>
+		 		<td><h2><a href="movie.php?mID=<?php echo $movie['mID']; ?>"><?php echo $movie['title']; ?></a></h2></td> <td><h2><?php echo $movie['year_released']; ?></h2></td>
 		 		</tr>
 		 		<?php } ?>
 

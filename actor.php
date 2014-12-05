@@ -11,17 +11,24 @@
 	 	
 	 		<! -- MAIN CONTENAT AREA -->
 	 		<div class="col-lg-8">
-	 			<h1>Coming soon</h1>
-		 		
+
 		 		<h2>Name:<?php echo $actor['first_name'].' '.$actor['last_name']; ?></h2>
 		 		<h2>DoB:<?php echo $actor['dob']; ?></h2>
 		 		<h2>Bio:<?php echo $actor['bio']; ?></h2>
-		 		<h2>Last updated:<?php echo $actor['timestamp']; ?></h2>
 		 		<h2>List of movies in:</h2>
 		 		<?php $moviesfromactor = get_moviesfromactor($aID);
 		 		foreach ($moviesfromactor as $moviefromactor) {?>
 		 		<h2><a href="movie.php?mID=<?php echo $moviefromactor['mID']; ?>"><?php echo $moviefromactor['title']; ?></a></h2>
 		 		<?php } ?>
+		 		
+		 		<?php
+		 		if($movie['won_oscar'] == "0"){
+		 			$answer = "no";
+		 		}else{
+		 			$answer = "yes";
+		 		}
+		 		?>
+		 		<tr><td><h2>Won Oscar?</h2></td><td><h2><?php echo $answer; ?></h2></td></tr>
 		 		
 			</div><! --/ MAIN CONTENT AREA -->
 	 		

@@ -11,32 +11,45 @@
 	 	
 	 		<! -- MAIN CONTENAT AREA -->
 	 		<div class="col-lg-8">
-	 			<h1>almost there</h1>
-		 	
-		 	 <h2>Title: <?php echo $movie['title']; ?></h2>
-		 		<h2>Year: <?php echo $movie['year_released']; ?></h2>
-		 		<h2>Synopes: <?php echo $movie['synopsis']; ?></h2>
-		 		<?php $studio = get_studio($movie['studioID']); ?>
-		 		<h2>Studio: <a href="studio.php?sID=<?php echo $studio['sID']; ?>"><?php echo $studio['name']; ?></a></h2>
-		 		<?php $actorsfrommovies = get_actorsfrommovies($mID);
+
+					<table style="width:100%">
+						
+					<tr><td><h2>Title: <?php echo $movie['title']; ?></h2></td> <td><h2>Year: <?php echo $movie['year_released']; ?></h2></td></tr>
+					<tr><td colspan="2"><h2>Synopes: <?php echo $movie['synopsis']; ?></h2></td></tr>
+					<tr><td colspan="2"><?php $studio = get_studio($movie['studioID']); ?><h2>Studio: <a href="studio.php?sID=<?php echo $studio['sID']; ?>"><?php echo $studio['name']; ?></a></h2></td></tr>
+					<tr>
+		 		<td colspan="2"><h2>Starring:</h2></td>
+		 		</tr>
+					<?php $actorsfrommovies = get_actorsfrommovies($mID);
 		 		foreach ($actorsfrommovies as $actorfrommovie) {?>
-		 		<h2>Starring: <a href="actor.php?aID=<?php echo $actorfrommovie['aID']; ?>"><?php echo $actorfrommovie['first_name'].' '.$actorfrommovie['last_name']; ?></a></h2>
-		 		<?php }
+		 		<tr>
+		 		<td colspan="2"><h2><a href="actor.php?aID=<?php echo $actorfrommovie['aID']; ?>"><?php echo $actorfrommovie['first_name'].' '.$actorfrommovie['last_name']; ?></a></h2></td>
+		 		</tr>
+		 		<?php } ?>
+		 		<tr>
+		 		<td colspan="2"><h2>Genre(s):</h2></td>
+		 		</tr>
+		 		<?php $genresfrommovies = get_genresfrommovies($mID);
+		 		foreach ($genresfrommovies as $genrefrommovie) { ?>
+					<tr>
+					<td<td colspan="2"></td><td><h2><a href="genre.php?gID=<?php echo $genrefrommovie['gID']; ?>"><?php echo $genrefrommovie['name']; ?></a></h2></td>
+					</tr>
+					<?php } ?>
+					
+					<?php
 		 		if($movie['was_novel'] == "0"){
 		 			$answer = "no";
 		 		}else{
 		 			$answer = "yes";
 		 		}
 		 		?>
-		 		<h2>Genre(s):</h2>
-		 		<?php $genresfrommovies = get_genresfrommovies($mID);
-		 		foreach ($genresfrommovies as $genrefrommovie) { ?>
-		 		<h2><a href="genre.php?gID=<?php echo $genrefrommovie['gID']; ?>"><?php echo $genrefrommovie['name']; ?></a></h2>
-		 		<?php } ?>
-		 		<h2>Book? <?php echo $answer; ?></h2>
-		 		<h2>Timestamp: <?php echo $movie['timestamp']; ?></h2>
+		 		<tr><td><h2>Book?</h2></td><td><h2><?php echo $answer; ?></h2></td></tr>
+					</table>
+					
+					
+					
+
 			</div><! --/ MAIN CONTENT AREA -->
-	 		
 	 	</div><! --/row -->
 	 </div><! --/container -->
 

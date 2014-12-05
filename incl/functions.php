@@ -11,7 +11,19 @@ $db= new Database($d, $u, $p, $host);
 
 function get_movies(){
 	$db = $GLOBALS['db'];
-	$results = $db->query("SELECT * FROM movies"); //updated
+	$results = $db->query("SELECT * FROM movies ORDER BY title ASC"); //updated
+	return $db->resToArray($results);
+}
+
+function get_5mostrecentmovies(){
+	$db = $GLOBALS['db'];
+	$results = $db->query("SELECT * FROM movies ORDER BY timestamp ASC LIMIT 5"); //updated
+	return $db->resToArray($results);
+}
+
+function get_5mostrecentactors(){
+	$db = $GLOBALS['db'];
+	$results = $db->query("SELECT * FROM actors ORDER BY timestamp 'first_name' LIMIT 5"); //updated
 	return $db->resToArray($results);
 }
 
@@ -147,6 +159,12 @@ function assign_gtm($info){		//works
 	}
 }
 
+function search($id){
+	$db = $GLOBALS['db'];
+	$results = $db->query("SELECT * FROM movies WHERE title LIKE '%$id%'");
+	return $db->resToArray($results);
+}
+
 
 ?>
->
+

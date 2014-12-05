@@ -16,11 +16,7 @@
 		 		foreach ($studios as $studio) {
 		 		?>
 		 		<tr>
-		 		<td><h2><a href="studio.php?sID=<?php echo $studio['sID']; ?>"><?php echo $studio['name']; ?></a></h2></td>
-		 		</tr>
-		 		<tr><td></td>
-		 		<td><h2><?php echo $studio['city'].' '. $studio['state'].' '. $studio['zip']; ?></td>
-		 		</tr>
+		 		<td><h2><a href="studio.php?sID=<?php echo $studio['sID']; ?>"><?php echo $studio['name']; ?></a></h2></td><td><h2><?php echo $studio['city'].' '. $studio['state'].' '. $studio['zip']; ?></td>
 		 		<?php } ?>
 
 

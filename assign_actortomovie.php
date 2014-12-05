@@ -12,7 +12,6 @@
 	 	
 	 		<! -- MAIN CONTENAT AREA -->
 	 		<div class="col-lg-8">
-		 			<h2>Some stuff goes here</h2>
 						<h2>Assign Actor to Movie</h2>
 						<form method="post" name="assign_atm">
 								<label for="actor"> Select actor/actress name:</label>
